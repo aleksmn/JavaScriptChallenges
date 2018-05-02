@@ -1,3 +1,6 @@
+// Confirm the Ending Challenge
+
+
 // Basic Code Solution:
 
 function confirmEnding(str, target) {
