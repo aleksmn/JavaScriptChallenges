@@ -1,5 +1,6 @@
 # JavaScriptChallenges
 
-Testing SSH support
+Hello! All this code just for educational purposes.
 
-testing test
+For more challenges look at
+https://www.freecodecamp.org
