@@ -1,0 +1,65 @@
+<script>
+// calling map on the json variable and using a custom callback function.
+  $(document).ready(function() {
+
+  $("#getMessage").on("click", function() {
+        $.getJSON("/json/cats.json", function(json) {
+
+      var html = "";
+
+        json.forEach(function(val) {
+        var keys = Object.keys(val);
+        html += "<div class = 'cat'>";
+        keys.forEach(function(key) {
+          html += "<strong>" + key + "</strong>: " + val[key] + "<br>";
+        });
+        html += "</div><br>";
+      });
+
+        $(".message").html(html);
+
+       });
+    });
+  });
+
+// variable objects stores an array of objects: [object1, object2, object3]
+// object consists of [key]: [value] pairs
+
+/* How the code works:
+
+json.forEach(function(val) {
+var keys = Object.keys(val); // finding the keys and then for each key
+html += “
+
+”; //creating divisions for each value there will be a division and there are total of 3 val
+keys.forEach(function(key) {
+html += “” + key + ": " + val[key] + "
+”;//for each key storing key- value pair in var html
+});
+html += “
+
+”; //ending the created divisions and changing the line 
+
+*/
+
+
+</script>
+
+<div class="container-fluid">
+  <div class = "row text-center">
+    <h2>Cat Photo Finder</h2>
+  </div>
+  <div class = "row text-center">
+    <div class = "col-xs-12 well message">
+      The message will go here
+    </div>
+  </div>
+  <div class = "row text-center">
+    <div class = "col-xs-12">
+      <button id = "getMessage" class = "btn btn-primary">
+        Get Message
+      </button>
+    </div>
+  </div>
+</div>
+
