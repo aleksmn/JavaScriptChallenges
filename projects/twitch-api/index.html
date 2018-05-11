@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <style>
+  
+  #content{
+    color: blue;
+    font-size: 40px;
+    background-color: #fff;
+    text-align: center;
+  }
+  h1{
+    color: purple;
+    font-size: 60px;
+    background-color: #fff;
+    font-weight: bold;
+    font-family: monospace;
+  }
+  .image {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+  }
+  #tv {
+    text-align: left;
+    font-size: 20px;
+  }
+
+  .btn {
+    font-family: monospace;
+    text-transform: uppercase;
+    letter-spacing: 2px;  
+  }
+  #tv {
+    font-family: monospace;
+  }
+  .item {
+    margin: 24px 0;
+  }
+  .label {
+    font-size: 12px;
+    font-family: monospace;
+    letter-spacing: 2px; 
+  }
+  </style>
+
+</head>
+<body>
+
+  <div class="container" id="content">
+
+    <h1 class="text-center">Twitch Viewer</h1>
+
+    <div id="buttons">
+      <button id="all" class="btn">All</button>
+      <button id="on"class="btn">Online</button>
+      <button id="off"class="btn">Offline</button>
+    </div>
+
+    <div class="container col-md-8 col-md-offset-2">
+      <div id="tv" class="text-left">
+        <div id="twitch">
+        </div>
+        <div id="online">
+        </div>
+        <div id="offline">
+          
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+<script>
+
+var channelList = ["ESL_SC2", "Nelari", "chamelle_", "thunderfury", "sindoray", "esl_csgo", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas", "brunofin"];
+var channelName
+var channelId
+var channelLink
+var channelLogo
+var streamContent
+
+$(document).ready(function(){
+
+  $.each(channelList, function(i, val) {
+
+    $.getJSON('https://wind-bow.glitch.me/twitch-api/streams/' + val, function (st) {
+
+      channelName = val;
+
+        if (st.stream == null) {
+
+          $.getJSON('https://wind-bow.glitch.me/twitch-api/channels/' + channelName, function(ch){
+            channelID = ch.display_name;
+            channelLogo = ch.logo;
+            channelLink = ch.url;
+            streamContent = ch.status;
+
+            if (ch.status == '404') {
+
+              $('#twitch').append('<div class="row item text-left">' + ch.message + '</div>');
+
+            } else {
+              $('#offline').append('<div class="row item text-left"><img class="image img-circle" src=' + channelLogo + '><a href=' + channelLink +' target="_blank">' + channelID + '</a>  <span class="label label-danger"> OFFLINE</span></div>');
+            }
+          });
+        } // END of "if (st.stream == null)" condition
+
+        else $.getJSON('https://wind-bow.glitch.me/twitch-api/channels/' + channelName, function(ch){
+
+            channelID = ch.display_name;
+            channelLogo = ch.logo;
+            channelLink = ch.url;
+            streamContent = ch.status;
+
+            $('#online').append('<div class="row item text-left"><img class="image img-circle" src=' + channelLogo + '><a href=' + channelLink +' target="_blank">' + channelID + '</a>  <span class="label label-success">ONLINE</span>  Streaming: ' + streamContent + '</div>');
+        })
+    })
+  }) // END of "each" loop
+
+
+  $('#all').click(All);
+  $('#on').click(Online);
+  $('#off').click(Offline);
+
+
+  function All() {
+    $('#online').show();
+    $('#offline').show();
+    $('#twitch').show();
+  }
+  function Online() {
+    $('#online').show();
+    $('#offline').hide();
+    $('#twitch').hide();
+  }
+  function Offline() {
+    $('#online').hide();
+    $('#offline').show();
+    $('#twitch').hide();
+  }
+
+});
+
+
+</script>
+
+
+</body>
+</html>
