@@ -14,15 +14,10 @@ function whatIsInAName(collection, source) {
       
       if(!obj.hasOwnProperty(sourceKeys[i]) || obj[sourceKeys[i]] !== source[sourceKeys[i]]) {
         return false;
-      }  
-      
+      }    
     }
-    
     return true;
-    
   });
-  
-
 }
 
 whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }], { "a": 1, "b": 2 });
