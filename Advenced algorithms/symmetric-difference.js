@@ -38,6 +38,15 @@ function sym() {
 
 console.log(sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]));
 
+// testing Set and spread syntax
+
+var numbers = [1, 2, 2, 3, 3, 4, 5];
+
+var uniqueNumbers = [... new Set(numbers)];
+
+console.log(uniqueNumbers);
+
+
 /* 
 Code Explanation:
 The slice() method is used to break down the arguments object to an array, args.
