@@ -26,9 +26,12 @@ function sym() {
   
 //   return symmDiff;
   
-  var unique = symmDiff.filter(function(elem, index, self) { 
-    return index === self.indexOf(elem);
-  });
+  // var unique = symmDiff.filter(function(elem, index, self) { 
+  //   return index === self.indexOf(elem);
+  // });
+
+  // Using Set and spread syntax
+  var unique = [...new Set(symmDiff)];
   
   return unique;
 }
