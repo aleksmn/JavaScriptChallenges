@@ -1,0 +1,84 @@
+<head>
+  <title>Js sandbox</title>
+</head>
+<body>
+<h3>JavaScript Sandbox</h3>
+<script>
+/*
+  a = 3
+  b = "3"
+  if (a == b) document.write("1") // 1 
+  if (a === b) document.write("2") 
+*/
+
+/*
+  a = 1; b = 0
+  document.write((a && b) + "<br>"); // 0
+  document.write((a || b) + "<br>"); // 1
+  document.write((!a) + "<br>"); // false
+  document.write((!b) + "<br>"); // true
+*/
+
+/*
+string = "Использование инструкции with";
+
+with (string)
+{
+  document.write("В строке " + length + " символов<br>")
+  document.write("В верхнем регистре: " + toUpperCase())
+}
+*/
+
+/*
+onerror = errorHandler
+document.writ("Добро пожаловать на наш сайт!")
+
+function errorHandler(a, b, c)
+{
+  out = "К сожалению обнаружена ошибка.\n\n";
+  out += "Ошибка: " + a + "\n";
+  out += "URL: " + b + "\n";
+  out += "Строка: " + c + "\n\n";
+  out += "Щелкните на кнопке OK для продолжения работы.\n";
+  alert(out);
+  return true;
+}
+*/
+
+/*
+try
+{
+  request = new XMLHttpRequest()
+}
+catch(err)
+{
+  // Использование другого метода для создания
+  // запроса XML HTTP Request object
+  // (для Internet Explorer)
+}
+finally
+{
+  // Блок кода, который выполняется всегда, 
+  // не зависимо от возникновения ошибки.
+}
+
+*/
+
+document.write("Оператор ? <br>")
+var a = 6
+document.write(
+  a <= 5 ?
+  "a меньше или равно 5" :
+  "a больше 5"
+)
+
+
+
+
+
+
+
+
+
+</script>
+</body>
