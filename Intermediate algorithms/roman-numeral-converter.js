@@ -4,20 +4,33 @@ Convert the given number into a roman numeral. */
 
 var convertToRoman = function(num) {
 
-  var decimalValue = [ 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 ];
-  var romanNumeral = [ 'M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I' ];
+  var lookupTable = [
+    {'decimal': 1000, 'roman': 'M'},
+    {'decimal': 900,  'roman': 'CM'}, 
+    {'decimal': 500,  'roman': 'D'}, 
+    {'decimal': 400,  'roman': 'CD'}, 
+    {'decimal': 100,  'roman': 'C'}, 
+    {'decimal': 90,   'roman': 'XC'}, 
+    {'decimal': 50,   'roman': 'L'},
+    {'decimal': 40,   'roman': 'XL'},
+    {'decimal': 10,   'roman': 'X'},
+    {'decimal': 9,    'roman': 'IX'},
+    {'decimal': 5,    'roman': 'V'},
+    {'decimal': 4,    'roman': 'IV'},
+    {'decimal': 1,    'roman': 'I'},
+  ];
 
-  var romanized = '';
+  var toRoman = '';
 
-  for (var i = 0; i < decimalValue.length; i++) {
-    while (decimalValue[i] <= num) {
-      romanized += romanNumeral[i];
-      num -= decimalValue[i];
+  for (var i = 0; i < lookupTable.length; i++) {
+    while (lookupTable[i]['decimal'] <= num) {
+      toRoman += lookupTable[i]['roman'];
+      num -= lookupTable[i]['decimal'];
     }
   }
 
-  return romanized;
+  return toRoman;
 }
 
-// test here
+
 console.log(convertToRoman(36));

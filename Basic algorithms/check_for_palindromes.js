@@ -5,14 +5,12 @@ function palindrome(str) {
   
   // Replace all non-word characters and '_' with ''.
   // \W is equivalent to [^A-Za-z0-9_] and means 
-  // 'all besides letters, numbers and '_'.
+  // all besides letters, numbers and '_'.
 
   var newStr = str.replace(/[\W_]/g,'').toLowerCase().split('').reverse().join('');
   
   str = str.replace(/[\W_]/g,'').toLowerCase();
-  
-  //return str +' '+ newStr;
-  
+   
   return str === newStr;
   
 }
