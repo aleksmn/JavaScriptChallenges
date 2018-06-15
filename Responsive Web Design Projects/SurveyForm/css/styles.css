@@ -1,0 +1,129 @@
+html, body {
+  text-align: center;
+  font-family: monospace;
+  min-width: 320px;
+}
+
+/* .wrapper {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto; 
+} */
+svg {
+  display: block;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+h1{
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  font-size: 40px;
+  color: #009100;
+}
+
+#form-outer {
+  border: 2px solid #007700;
+  border-radius: 2px;
+  margin: 0 auto;
+  width: 75%;
+  max-width: 600px;
+  padding: 10px;
+}
+
+.labels {
+  display: inline-block;
+  text-align: right;
+  width: 40%;
+  padding: 5px;
+  vertical-align: top;
+  margin-top: 10px;
+}
+
+.rightTab {
+  display: inline-block;
+  text-align: left;
+  width: 50%;
+  vertical-align: middle;
+}
+
+.input-field {
+  height: 12px;
+  width: 80%;
+  padding: 5px;
+  margin: 10px;
+  border: 1px solid #227729;
+  border-radius: 2px;
+}
+
+#number {
+  width: 40px;
+}
+
+
+.userRatings, input[type="checkbox"] {
+  float: left;
+  margin-right: 5px;
+}
+
+
+#submit {
+  background-color: #009100;
+  border-radius: 4px;
+  color: white;
+  font-size: 1.4em;
+  letter-spacing: 2px;
+  font-family: inherit;
+  height: 40px;
+  width: 100px;
+  margin: 10px;
+  border: none;
+}
+
+.dropdown {
+  height: 35px;
+  width: 140px;
+  padding: 5px;
+  margin: 10px;
+  margin-top: 15px;
+  border: 1px solid #227729;
+  border-radius: 2px;
+}
+
+.radio, .checkbox {
+  position: relative;
+  left: -43px;
+  margin-left: 10px;
+  display: block;
+  padding-bottom: 10px;
+}
+
+@media screen and (max-width: 800px) {
+  .input-field {
+    width: 80%;
+  }
+  select {
+    width: 90%;
+  }
+}
+
+
+@media screen and (max-width: 520px) {
+  .labels {
+    width: 100%;
+    text-align: left;
+  }
+  .rightTab {
+    width: 80%;
+    float: left;
+  }
+  .input-field {
+    width: 100%;
+  }
+  select {
+    width: 100%;
+  }
+}
