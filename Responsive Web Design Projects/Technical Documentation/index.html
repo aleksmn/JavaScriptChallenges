@@ -4,62 +4,335 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
   <title>Techical Documentation</title>
 </head>
 <body>
   
 
 <nav id="navbar">
-  <header>PHP Documentation</header>
+  <header>PHP <small>Control Structures</small></header>
   <ul>
     <a class="nav-link" href="#Introduction" rel="internal"><li>Introduction</li></a>
-    <a class="nav-link" href="#If" rel="internal"><li>If</li></a>
-    <a class="nav-link" href="#Else" rel="internal"><li>Else</li></a>
-    <a class="nav-link" href="#Elseif/else if" rel="internal"><li>Elseif/else if</li></a>
-    <a class="nav-link" href="#Alternative_syntax" rel="internal"><li>Alternative syntax</li></a>
-    <a class="nav-link" href="#While" rel="internal"><li>While</li></a>
-    <a class="nav-link" href="#Do-while" rel="internal"><li>Do-while</li></a>
-    <a class="nav-link" href="#For" rel="internal"><li>For</li></a>
-    <a class="nav-link" href="#Foreach" rel="internal"><li>Foreach</li></a>
-    <a class="nav-link" href="#Break" rel="internal"><li>Break</li></a>
-    <a class="nav-link" href="#Continue" rel="internal"><li>Continue</li></a>
-    <a class="nav-link" href="#Switch" rel="internal"><li>Switch</li></a>
-    <a class="nav-link" href="#Declare" rel="internal"><li>Declare</li></a>
-    <a class="nav-link" href="#Return" rel="internal"><li>Return</li></a>
-    <a class="nav-link" href="#Require" rel="internal"><li>Require</li></a>
-    <a class="nav-link" href="#Include" rel="internal"><li>Include</li></a>
-    <a class="nav-link" href="#Require_once" rel="internal"><li>Require_once</li></a>
-    <a class="nav-link" href="#Include_once" rel="internal"><li>Include_once</li></a>
-    <a class="nav-link" href="#Goto" rel="internal"><li>Goto</li></a>
+    <a class="nav-link" href="#if" rel="internal"><li>If</li></a>
+    <a class="nav-link" href="#else" rel="internal"><li>Else</li></a>
+    <a class="nav-link" href="#elseif/else if" rel="internal"><li>Elseif/else if</li></a>
+    <a class="nav-link" href="#alternative_syntax" rel="internal"><li>Alternative syntax</li></a>
+    <a class="nav-link" href="#while" rel="internal"><li>While</li></a>
+    <a class="nav-link" href="#do-while" rel="internal"><li>Do-while</li></a>
+    <a class="nav-link" href="#for" rel="internal"><li>For</li></a>
+    <a class="nav-link" href="#foreach" rel="internal"><li>Foreach</li></a>
+    <!-- 
+    <a class="nav-link" href="#break" rel="internal"><li>Break</li></a>
+    <a class="nav-link" href="#continue" rel="internal"><li>Continue</li></a>
+    <a class="nav-link" href="#switch" rel="internal"><li>Switch</li></a>
+    <a class="nav-link" href="#declare" rel="internal"><li>Declare</li></a>
+    <a class="nav-link" href="#return" rel="internal"><li>Return</li></a>
+    <a class="nav-link" href="#require" rel="internal"><li>Require</li></a>
+    <a class="nav-link" href="#include" rel="internal"><li>Include</
+      li></a>
+    <a class="nav-link" href="#require_once" rel="internal"><li>Require_once</li></a>
+    <a class="nav-link" href="#include_once" rel="internal"><li>Include_once</li></a>
+    <a class="nav-link" href="#goto" rel="internal"><li>Goto</li></a> -->
   </ul>
 </nav>
 <main id="main-doc">
   <section class="main-section" id="Introduction">
-    <header></header>
+    <header>Introduction</header>
     <article>
-      <p></p>
-      <p></p>
-      <p></p>
+      <p>Any PHP script is built out of a series of statements. A statement can be an assignment, a function call, a loop, a conditional statement or even a statement that does nothing (an empty statement). Statements usually end with a semicolon. In addition, statements can be grouped into a statement-group by encapsulating a group of statements with curly braces. A statement-group is a statement by itself as well. The various statement types are described in this chapter.</p>
     </article>
   </section>
-  <section class="main-section" id="">
-    <header></header>
+  <section class="main-section" id="if">
+    <header>if</header>
     <article>
-      <p></p>
-      <p></p>
-      <p></p>
+      <p>The if construct is one of the most important features of many languages, PHP included. It allows for conditional execution of code fragments. PHP features an if structure that is similar to that of C:</p>
+      
+<code>if (expr)
+  statement</code>
+      
+    
+      <p>As described in the section about expressions, expression is evaluated to its Boolean value. If expression evaluates to TRUE, PHP will execute statement, and if it evaluates to FALSE - it'll ignore it. More information about what values evaluate to FALSE can be found in the 'Converting to boolean' section.</p>
+
+      <p>The following example would display a is bigger than b if $a is bigger than $b:</p>
+      
+
+<code>if ($a > $b)
+  echo "a is bigger than b";</code>
+      
+      <p>Often you'd want to have more than one statement to be executed conditionally. Of course, there's no need to wrap each statement with an if clause. Instead, you can group several statements into a statement group. For example, this code would display a is bigger than b if $a is bigger than $b, and would then assign the value of $a into $b:</p>
+      
+
+<code>if ($a > $b) {
+  echo "a is bigger than b";
+  $b = $a;
+}</code>
+
+        
+      <p>If statements can be nested infinitely within other if statements, which provides you with complete flexibility for conditional execution of the various parts of your program.</p>
     </article>
   </section>
 
-  <!-- Template -->
+  <section class="main-section" id="else">
+      <header>else</header>
+      <article>
+        <p>Often you'd want to execute a statement if a certain condition is met, and a different statement if the condition is not met. This is what else is for. else extends an if statement to execute a statement in case the expression in the if statement evaluates to FALSE. For example, the following code would display a is greater than b if $a is greater than $b, and a is NOT greater than b otherwise:</p>
+        
+
+<code>if ($a > $b) {
+  echo "a is greater than b";
+} else {
+  echo "a is NOT greater than b";
+}</code>
+      
+        <p>The else statement is only executed if the if expression evaluated to FALSE, and if there were any elseif expressions - only if they evaluated to FALSE as well (see elseif).</p>
+      </article>
+    </section>
+    <section class="main-section" id="elseif/else if">
+        <header>elseif/else if</header>
+        <article>
+          <p>elseif, as its name suggests, is a combination of if and else. Like else, it extends an if statement to execute a different statement in case the original if expression evaluates to FALSE. However, unlike else, it will execute that alternative expression only if the elseif conditional expression evaluates to TRUE. For example, the following code would display a is bigger than b, a equal to b or a is smaller than b:</p>
+          
+<code>if ($a > $b) {
+    echo "a is bigger than b";
+} elseif ($a == $b) {
+    echo "a is equal to b";
+} else {
+    echo "a is smaller than b";
+}</code>
+
+          
+          <p>There may be several elseifs within the same if statement. The first elseif expression (if any) that evaluates to TRUE would be executed. In PHP, you can also write 'else if' (in two words) and the behavior would be identical to the one of 'elseif' (in a single word). The syntactic meaning is slightly different (if you're familiar with C, this is the same behavior) but the bottom line is that both would result in exactly the same behavior.</p>
+          <p>The elseif statement is only executed if the preceding if expression and any preceding elseif expressions evaluated to FALSE, and the current elseif expression evaluated to TRUE.</p>
+          
+
+
+<code>/* Incorrect Method: */
+if ($a > $b):
+    echo $a." is greater than ".$b;
+else if ($a == $b): // Will not compile.
+    echo "The above line causes a parse error.";
+endif;
+
+/* Correct Method: */
+if ($a > $b):
+    echo $a." is greater than ".$b;
+elseif ($a == $b): // Note the combination of the words.
+    echo $a." equals ".$b;
+else:
+    echo $a." is neither greater than or equal to ".$b;
+endif;</code>
+
+          
+        </article>
+      </section>
+      <section class="main-section" id="alternative_syntax">
+          <header>Alternative syntax</header>
+          <article>
+            <p>PHP offers an alternative syntax for some of its control structures; namely, if, while, for, foreach, and switch. In each case, the basic form of the alternate syntax is to change the opening brace to a colon (:) and the closing brace to endif;, endwhile;, endfor;, endforeach;, or endswitch;, respectively.</p>
+            
+<code>if ($a == 5):
+  echo "A is equal to 5";
+endif;</code>
+            
+            <p>In the above example, the HTML block "A is equal to 5" is nested within an if statement written in the alternative syntax. The HTML block would be displayed only if $a is equal to 5.</p>
+            <p>The alternative syntax applies to else and elseif as well. The following is an if structure with elseif and else in the alternative format:</p>
+              
+<code>if ($a == 5):
+    echo "a equals 5";
+    echo "...";
+elseif ($a == 6):
+    echo "a equals 6";
+    echo "!!!";
+else:
+    echo "a is neither 5 nor 6";
+endif;</code>
+              
+            
+          </article>
+        </section>
+        <section class="main-section" id="while">
+            <header>while</header>
+            <article>
+              <p>while loops are the simplest type of loop in PHP. They behave just like their C counterparts. The basic form of a while statement is:</p>
+              
+<code>while (expr)
+  statement</code>
+              
+              <p>The meaning of a while statement is simple. It tells PHP to execute the nested statement(s) repeatedly, as long as the while expression evaluates to TRUE. The value of the expression is checked each time at the beginning of the loop, so even if this value changes during the execution of the nested statement(s), execution will not stop until the end of the iteration (each time PHP runs the statements in the loop is one iteration). Sometimes, if the while expression evaluates to FALSE from the very beginning, the nested statement(s) won't even be run once.</p>
+              <p>Like with the if statement, you can group multiple statements within the same while loop by surrounding a group of statements with curly braces, or by using the alternate syntax:</p>
+              
+<code>while (expr):
+  statement
+  ...
+endwhile;</code>
+              
+              <p>The following examples are identical, and both print the numbers 1 through 10:</p>
+              
+
+<code>/* example 1 */
+
+$i = 1;
+while ($i <= 10) {
+    echo $i++;  /* the printed value would be
+                    $i before the increment
+                    (post-increment) */
+}
+
+/* example 2 */
+
+$i = 1;
+while ($i <= 10):
+    echo $i;
+    $i++;
+endwhile;</code>
+
+              
+            </article>
+          </section>
+        
+          <section class="main-section" id="do-while">
+              <header>do-while</header>
+              <article>
+                <p>do-while loops are very similar to while loops, except the truth expression is checked at the end of each iteration instead of in the beginning. The main difference from regular while loops is that the first iteration of a do-while loop is guaranteed to run (the truth expression is only checked at the end of the iteration), whereas it may not necessarily run with a regular while loop (the truth expression is checked at the beginning of each iteration, if it evaluates to FALSE right from the beginning, the loop execution would end immediately).</p>
+                <p>There is just one syntax for do-while loops:</p>
+
+<code>$i = 0;
+do {
+    echo $i;
+} while ($i > 0);</code>
+
+                <p>The above loop would run one time exactly, since after the first iteration, when truth expression is checked, it evaluates to FALSE ($i is not bigger than 0) and the loop execution ends.</p>
+                <p>Advanced C users may be familiar with a different usage of the do-while loop, to allow stopping execution in the middle of code blocks, by encapsulating them with do-while (0), and using the break statement. The following code fragment demonstrates this:</p>
+
+<code>do {
+if ($i < 5) {
+    echo "i is not big enough";
+    break;
+}
+$i *= $factor;
+if ($i < $minimum_limit) {
+    break;
+}
+echo "i is ok";
+
+/* process i */
+
+} while (0);</code>
+                  
+                <p>Don't worry if you don't understand this right away or at all. You can code scripts and even powerful scripts without using this 'feature'. Since PHP 5.3.0, it is possible to use goto operator instead of this hack.</p>
+              </article>
+            </section>
+            <section class="main-section" id="for">
+                <header>for</header>
+                <article>
+                  <p>for loops are the most complex loops in PHP. They behave like their C counterparts. The syntax of a for loop is:</p>
+<code>for (expr1; expr2; expr3)
+    statement</code>
+                  <p>The first expression (expr1) is evaluated (executed) once unconditionally at the beginning of the loop.</p>
+                  <p>In the beginning of each iteration, expr2 is evaluated. If it evaluates to TRUE, the loop continues and the nested statement(s) are executed. If it evaluates to FALSE, the execution of the loop ends.</p>
+                  <p>At the end of each iteration, expr3 is evaluated (executed).</p>
+                  <p>Each of the expressions can be empty or contain multiple expressions separated by commas. In expr2, all expressions separated by a comma are evaluated but the result is taken from the last part. expr2 being empty means the loop should be run indefinitely (PHP implicitly considers it as TRUE, like C). This may not be as useless as you might think, since often you'd want to end the loop using a conditional break statement instead of using the for truth expression.</p>
+                  <p>Consider the following examples. All of them display the numbers 1 through 10:</p>
+<code>/* example 1 */
+  
+  for ($i = 1; $i <= 10; $i++) {
+      echo $i;
+  }
+  
+  /* example 2 */
+  
+  for ($i = 1; ; $i++) {
+      if ($i > 10) {
+          break;
+      }
+      echo $i;
+  }
+  
+  /* example 3 */
+  
+  $i = 1;
+  for (; ; ) {
+      if ($i > 10) {
+          break;
+      }
+      echo $i;
+      $i++;
+  }
+  
+  /* example 4 */
+  
+  for ($i = 1, $j = 0; $i <= 10; $j += $i, print $i, $i++);
+</code>
+                  <p>Of course, the first example appears to be the nicest one (or perhaps the fourth), but you may find that being able to use empty expressions in for loops comes in handy in many occasions.</p>
+                  <p>PHP also supports the alternate "colon syntax" for for loops.</p>
+<code>for (expr1; expr2; expr3):
+    statement
+    ...
+endfor;</code>
+                  <p>It's a common thing to many users to iterate through arrays like in the example below.</p>
+
+<code>/*
+* This is an array with some data we want to modify
+* when running through the for loop.
+*/
+$people = array(
+    array('name' => 'Kalle', 'salt' => 856412),
+    array('name' => 'Pierre', 'salt' => 215863)
+);
+
+for($i = 0; $i < count($people); ++$i) {
+    $people[$i]['salt'] = mt_rand(000000, 999999);
+}</code>
+
+                    <p>The above code can be slow, because the array size is fetched on every iteration. Since the size never changes, the loop be easily optimized by using an intermediate variable to store the size instead of repeatedly calling count():</p>
+<code>
+$people = array(
+    array('name' => 'Kalle', 'salt' => 856412),
+    array('name' => 'Pierre', 'salt' => 215863)
+);
+
+for($i = 0, $size = count($people); $i < $size; ++$i) {
+    $people[$i]['salt'] = mt_rand(000000, 999999);
+}
+</code>
+                </article>
+              </section>
+              <section class="main-section" id="foreach">
+                  <header>foreach </header>
+                  <article>
+                    <p>The foreach construct provides an easy way to iterate over arrays. foreach works only on arrays and objects, and will issue an error when you try to use it on a variable with a different data type or an uninitialized variable. There are two syntaxes:</p>
+<code>foreach (array_expression as $value)
+    statement
+foreach (array_expression as $key => $value)
+    statement</code>
+                    <p>The first form loops over the array given by array_expression. On each iteration, the value of the current element is assigned to $value and the internal array pointer is advanced by one (so on the next iteration, you'll be looking at the next element).</p>
+                    <p>The second form will additionally assign the current element's key to the $key variable on each iteration.</p>
+                    <p>In order to be able to directly modify array elements within the loop precede $value with &. In that case the value will be assigned by reference.</p>
+                    <code><?php
+                      $arr = array(1, 2, 3, 4);
+                      foreach ($arr as &$value) {
+                          $value = $value * 2;
+                      }
+                      // $arr is now array(2, 4, 6, 8)
+                      unset($value); // break the reference with the last element
+                      ?></code>
+                  </article>
+                </section>
+
+
+  <!-- Template 
+
   <section class="main-section" id="">
     <header></header>
     <article>
       <p></p>
-      <p></p>
-      <p></p>
+      <code>
+      </code>
     </article>
   </section>
+
+  -->
 
 </main>
 
