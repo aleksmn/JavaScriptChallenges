@@ -5,16 +5,121 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <title>Product Page</title>
 </head>
 <body>
-  <header>
+<div id="page-wrapper">
+  <header id="header">
+    <nav id="nav-bar">
+        <div id="logo"><img src="http://freevector.co/wp-content/uploads/2010/11/88551-melodica.png" width="36" id="header-img"/><span>Melodica School</span></div>
+        
+      <ul>
+        <li><a class="nav-link" href="#features">Features</a></li>
+        <li><a class="nav-link" href="#how-it-works">How It Works</a></li>
+        <li><a class="nav-link" href="#pricing">Pricing</a></li>
+      </ul>
+    </nav>
     <div class="header-text">
       <h1>Hello! Learn to play Melodica&nbsp;with&nbsp;us!</h1>
       <span>Because we totally know how to play!</span>
+      <!-- <button id="header-button">Get Involved!</button> -->
     </div>
   </header>
-  <main></main>
-  <footer></footer>
+
+  <main>
+    <section id="features">
+      <div class="grid">
+        <div class="icon">
+          <i class="fa fa-2x fa-space-shuttle"></i>
+        </div>
+        <div class="desc">
+          <h2>Fast Learning!</h2>
+          <p>Ut ex dolorem modi est itaque nobis iusto molestiae. Culpa quis laborum adipisci alias vero corporis incidunt repudiandae.</p>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="icon">
+          <i class="fa fa-2x fa-edit"></i>
+        </div>
+        <div class="desc">
+          <h2>Practical Learning!</h2>
+          <p>Quis excepturi voluptates odio a qui quibusdam optio ab. Non architecto tenetur omnis illo et at est. Modi voluptas </p>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="icon">
+          <i class="fa fa-2x fa-thumbs-o-up"></i> 
+        </div>
+        <div class="desc">
+          <h2>A Lot of Fun!</h2>
+          <p>Et commodi neque omnis ullam. Dolor ut labore ut assumenda. Sed autem quia eligendi recusandae hic delectus. Voluptas dolor </p>
+        </div>
+      </div>
+    </section>
+    <section id="subscription">
+      <h2>Subscribe to our email messages!</h2>
+      <form id="form" action="https://www.freecodecamp.com/email-submit" >
+        <input class="input" name="email" id="email" type="email" placeholder="Enter your email address" required>
+        <input id="submit" type="submit" value="Get Started" class="btn">
+      </form>
+    </section>
+    <section id="how-it-works">
+        <iframe id="video" height="315" src="https://www.youtube-nocookie.com/embed/cy1fwF_fSe4?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+    </section>
+    <section id="pricing">
+      <div id="free" class="pricing-option">
+          <div class="level">
+              Free Course
+          </div>
+          <h2>$0</h2>
+          <ol>
+            <li>Lorem ipsum.</li>
+            <li>Lorem ipsum.</li>
+            <li>Lorem ipsum dolor.</li>
+            <li>Lorem ipsum.</li>
+          </ol>
+          <button class="btn">Select</button>
+      </div>
+      <div id="premium" class="pricing-option">
+          <div class="level">
+              Premium Course
+          </div>
+          <h2>$400</h2>
+          <ol>
+            <li>Lorem ipsum.</li>
+            <li>Lorem ipsum.</li>
+            <li>Lorem ipsum dolor.</li>
+            <li>Lorem ipsum.</li>
+          </ol>
+          <button class="btn">Select</button>
+      </div>
+      <div id="proffecional" class="pricing-option">
+          <div class="level">
+              Proffecional Course
+          </div>
+          <h2>$1200</h2>
+          <ol>
+            <li>Lorem ipsum.</li>
+            <li>Lorem ipsum.</li>
+            <li>Lorem ipsum dolor.</li>
+            <li>Lorem ipsum.</li>
+          </ol>
+          <button class="btn">Select</button>
+      </div>
+    </section>
+
+  </main>
+  <footer>
+      <ul>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <span>Copyright 2018, Melodica School</span>
+  </footer>
+
+</div>
 </body>
 </html>

@@ -4,6 +4,9 @@ body{
   font-size: 18px;
 }
 
+#page-wrapper {
+  position: relative;
+}
 
 header {
   background-image: url("https://joannafunk.files.wordpress.com/2013/07/my-suzuki-pro-37.jpg");
@@ -16,22 +19,222 @@ header {
   align-items: left;
 }
 .header-text {
-  margin: 40px;
+  /* margin: 60px; */
+  text-align: center;
+  padding: 20px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  /* top: 80px; */
+  /* height: 30vw; */
+  width: 50vw;
+  background-color: rgba(0, 139, 139, 0.678);
+  margin: auto;
 }
-header h1 {
-  background-color: rgba(74, 216, 216, 0.801);
+
+.header-text h1 {
+  margin: auto;
+}
+.header-text span {
+  margin-top: 10px;
+}
+
+section {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+
+} 
+.grid {
+  display: flex;
+}
+
+#nav-bar {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  min-height: 40px;
+  background-color: rgb(68, 68, 68);
+  color: antiquewhite;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+#logo span{
+  text-transform: uppercase;
+  height: 40px;
+  margin-left: 10px;
+  top: 10px;
+  line-height: 40px; 
+}
+
+#logo img {
+  display: block;
+  float: left;
+
+}
+
+#nav-bar ul {
+  display: flex;
+  margin: 0px;
+}
+#nav-bar ul li {
+  padding-right: 15px;
+  list-style: none;
+}
+
+
+#nav-bar a {
+  text-decoration: none;
+  color: antiquewhite;
+}
+
+#nav-bar a:hover {
+  color: rgba(211, 159, 63, 0.801);
+}
+
+/* FEATURES */
+#features {
+  margin-top: 30px;
+
+}
+
+#features .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20vw;
+  height: 125px;
+  color: chocolate;
+}
+#features .desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80vw;
   padding: 5px;
-  max-width: 600px;
-  /* text-align: center; */
-  border-radius: 4px;
-  margin: 12px;
 }
-header span {
-  background-color: rgba(74, 216, 216, 0.801);
-  padding: 5px;
-  border-radius: 4px;
-  margin: 12px;
+
+/* SUBSCRPTION */
+
+#subscription {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
 }
+
+
+#how-it-works {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+#how-it-works iframe {
+  max-width: 560px;
+  width: 100%;
+}
+
+
+/* PRICING */
+
+#pricing {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.pricing-option {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  align-items: center;
+  margin: 10px;
+}
+
+.pricing-option .level {
+  color: chocolate;
+  font-size: 1.4em;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+footer {
+  margin-top: 30px;
+  background-color: grey;
+  padding: 10px;
+}
+footer ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0px;
+}
+footer ul li {
+  padding: 0 10px;
+}
+footer span {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  font-size: 0.9em;
+  color: #444;
+}
+
+.input {
+  height: 24px;
+}
+
+.btn {
+	-moz-box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffc477), color-stop(1, #fb9e25));
+	background:-moz-linear-gradient(top, #ffc477 5%, #fb9e25 100%);
+	background:-webkit-linear-gradient(top, #ffc477 5%, #fb9e25 100%);
+	background:-o-linear-gradient(top, #ffc477 5%, #fb9e25 100%);
+	background:-ms-linear-gradient(top, #ffc477 5%, #fb9e25 100%);
+	background:linear-gradient(to bottom, #ffc477 5%, #fb9e25 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffc477', endColorstr='#fb9e25',GradientType=0);
+	background-color:#ffc477;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #eeb44f;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #cc9f52;
+}
+.btn:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #fb9e25), color-stop(1, #ffc477));
+	background:-moz-linear-gradient(top, #fb9e25 5%, #ffc477 100%);
+	background:-webkit-linear-gradient(top, #fb9e25 5%, #ffc477 100%);
+	background:-o-linear-gradient(top, #fb9e25 5%, #ffc477 100%);
+	background:-ms-linear-gradient(top, #fb9e25 5%, #ffc477 100%);
+	background:linear-gradient(to bottom, #fb9e25 5%, #ffc477 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fb9e25', endColorstr='#ffc477',GradientType=0);
+	background-color:#fb9e25;
+}
+.btn:active {
+	position:relative;
+	top:1px;
+}
+
+
 
 @media screen and (max-width: 710px) {
   header h1 {
