@@ -166,6 +166,17 @@ section {
   text-align: center;
 }
 
+.pricing-option ol {
+  margin-top: 10px;
+  list-style: none;
+}
+
+.price {
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
 
 footer {
   margin-top: 30px;
@@ -240,6 +251,11 @@ footer span {
   header h1 {
     max-width: 316px;
   }
+  .header-text {
+    width: 100vw;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
   
 }
 
@@ -252,4 +268,26 @@ footer span {
     font-size: 0.8em;
   }
   
+}
+
+@media (max-width: 580px) {
+  #nav-bar {
+    display: flex;
+    margin-top: 10px;
+    width: 100vw;
+    flex-direction: column;
+  }
+  #nav-bar ul {
+    margin-bottom: 10px;
+  }
+  #pricing {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0px;
+    
+  }
+  .pricing-option {
+    margin-top: 30px;
+    width: 100vw;
+  }
 }
